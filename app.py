@@ -44,21 +44,24 @@ if img_file is not None:
     JST =datetime.timezone(t_dalta,'JST')
     now = datetime.datetime.now(JST)
     d = now.strftime('%Y%m%d%H%M%S')
-    file_dir = "./data"
-    file_temp = os.path.join(file_dir, "temp.png")
+    fdir = "data"
+    fpath = os.path.join(os.getcwd(), fdir)
     file_name =  str(d) + "_" + img_file.name
-    file_path = os.path.join(file_dir, file_name)
+    file_path = os.path.join(fpath, file_name)
 
-    #print('@@@@@@@@@@@-Start-@@@@@@@@@@')
-    #print(img_file)
-    #print(d)
-    #print(file_name)
+    print('@@@@@@@@@@@-Start-@@@@@@@@@@')
+    print(img_file)
+    print(d)
+    print(fdir)
+    print(fpath)
+    print(file_name)
     print(file_path)
-    #print('@@@@@@@@@@@- End -@@@@@@@@@@')
+    print('@@@@@@@@@@@- End -@@@@@@@@@@')
 
     # ファイルOpen,Save
     img = Image.open(img_file)
     img.save(file_path)
+    #img.save(file_name)
 
     IMG_SIZE = 64
 
